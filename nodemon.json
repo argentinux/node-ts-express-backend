@@ -1,6 +1,5 @@
-
 {
-	"watch": ["src"],
-	"exec": "ts-node -P tsconfig.json register",
-	"ext": "ts js"
+  "watch": ["src"],
+  "exec": "ts-node -P tsconfig.json register",
+  "ext": "ts js"
 }

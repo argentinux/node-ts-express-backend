@@ -1,6 +1,6 @@
 import express from 'express'
 import logger from 'loglevel'
-import {getRoutes} from './routes'
+import { getRoutes } from './routes'
 import util from 'util'
 
 import 'express-async-errors'
@@ -14,22 +14,21 @@ function startServer(port: number) {
 
   app.use(errorHandler)
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const server = app.listen(port, () => {
       logger.info(`>> Listening on port ${port}`)
 
-      // promisify `close` method 
+      // promisify `close` method
       const originalClose = server.close.bind(server)
       /* @ts-ignore */
       server.close = util.promisify(originalClose)
 
-      // close server 
+      // close server
       setupCloseOnExit(server)
 
       resolve(server)
     })
   })
-
 }
 
-export {startServer}
+export { startServer }

@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=production node ./dist",
     "build": "babel src --out-dir dist --extensions '.ts,.tsx'",
     "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write"
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {

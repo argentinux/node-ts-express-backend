@@ -1,4 +1,4 @@
-import logger, {LogLevelDesc} from 'loglevel'
+import logger, { LogLevelDesc } from 'loglevel'
 import { startServer } from './start'
 
 const port = parseInt(process.env.PORT!) || 3000
